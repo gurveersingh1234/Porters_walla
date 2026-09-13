@@ -1,0 +1,3865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Gurveer Singh — Student, Creator and aspiring Technology Entrepreneur. Explore my projects, skills, business ideas and technology journey.">
+
+<meta name="author" content="Gurveer Singh">
+
+<title>Gurveer Singh | Technology • AI • Entrepreneurship</title>
+
+<!-- =========================
+     GOOGLE FONT
+========================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #050509;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   CUSTOM CURSOR GLOW
+========================================================= */
+
+.cursor-glow {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+
+    background: radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.13),
+        transparent 70%
+    );
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 0;
+
+    transition:
+        left 0.08s linear,
+        top 0.08s linear;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    z-index: -5;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(124, 58, 237, 0.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(6, 182, 212, 0.12),
+            transparent 30%
+        ),
+
+        #050509;
+}
+
+.background::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent
+    );
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particles {
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    opacity: 0.35;
+
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1150px, 92%);
+
+    padding: 13px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(10,10,15,0.7);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 100px;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.3);
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family: "Space Grotesk";
+
+    font-weight: 800;
+
+    font-size: 20px;
+}
+
+.logo-dot {
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #06b6d4
+    );
+
+    box-shadow:
+        0 0 20px #8b5cf6;
+}
+
+.nav-links {
+
+    display: flex;
+
+    gap: 28px;
+
+    list-style: none;
+}
+
+.nav-links a {
+
+    font-size: 13px;
+
+    opacity: 0.65;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+
+    opacity: 1;
+
+    color: #a78bfa;
+}
+
+.nav-button {
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #06b6d4
+    );
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding:
+        170px 7%
+        100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.hero-container {
+
+    width: min(1250px, 100%);
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        0.9fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* HERO TEXT */
+
+.hero-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.035);
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 25px;
+}
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px #22c55e;
+}
+
+.hero h1 {
+
+    font-family: "Space Grotesk";
+
+    font-size: clamp(
+        55px,
+        8vw,
+        105px
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 28px;
+}
+
+.gradient-text {
+
+    background:
+        linear-gradient(
+            90deg,
+            #a78bfa,
+            #22d3ee,
+            #f472b6
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+    background-size: 200% auto;
+
+    animation:
+        gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove {
+
+    to {
+        background-position: 200% center;
+    }
+}
+
+.hero-description {
+
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.62);
+
+    margin-bottom: 35px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+
+    padding: 14px 23px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.35s;
+
+    cursor: pointer;
+}
+
+.btn-primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #06b6d4
+        );
+
+    border: none;
+
+    box-shadow:
+        0 15px 40px rgba(124,58,237,0.25);
+}
+
+.btn-secondary {
+
+    background:
+        rgba(255,255,255,0.04);
+}
+
+.btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(124,58,237,0.25);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-visual {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    perspective: 1200px;
+}
+
+.photo-card {
+
+    position: relative;
+
+    width: 390px;
+    height: 500px;
+
+    border-radius: 35px;
+
+    padding: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(167,139,250,0.8),
+            rgba(6,182,212,0.5),
+            rgba(236,72,153,0.6)
+        );
+
+    transform:
+        rotateY(-10deg)
+        rotateX(5deg);
+
+    transition:
+        transform 0.15s ease;
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,0.5),
+
+        0 0 80px
+        rgba(124,58,237,0.12);
+}
+
+.photo-card-inner {
+
+    height: 100%;
+
+    overflow: hidden;
+
+    border-radius: 27px;
+
+    background: #111;
+}
+
+.photo-card img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        saturate(1.1)
+        contrast(1.05);
+}
+
+.photo-glow {
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(139,92,246,0.25);
+
+    filter: blur(70px);
+
+    z-index: -1;
+}
+
+
+/* FLOATING LABELS */
+
+.floating-card {
+
+    position: absolute;
+
+    padding: 13px 17px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        rgba(15,15,22,0.8);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 15px;
+
+    font-size: 11px;
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,0,0,0.25);
+
+    animation:
+        floating 4s ease-in-out infinite;
+}
+
+.float-one {
+
+    top: 40px;
+    right: -30px;
+}
+
+.float-two {
+
+    bottom: 50px;
+    left: -30px;
+
+    animation-delay: 1s;
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee {
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    overflow: hidden;
+
+    padding: 18px 0;
+
+    white-space: nowrap;
+}
+
+.marquee-track {
+
+    display: inline-flex;
+
+    gap: 40px;
+
+    animation:
+        marquee 25s linear infinite;
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 13px;
+
+    opacity: 0.55;
+
+    letter-spacing: 2px;
+}
+
+@keyframes marquee {
+
+    to {
+        transform:
+            translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section {
+
+    padding: 120px 7%;
+}
+
+.section-container {
+
+    width: min(1200px, 100%);
+
+    margin: auto;
+}
+
+.section-heading {
+
+    margin-bottom: 60px;
+}
+
+.section-number {
+
+    color: #a78bfa;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size:
+        clamp(40px,6vw,70px);
+
+    letter-spacing: -3px;
+
+    line-height: 1;
+}
+
+.section-heading p {
+
+    max-width: 650px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    margin-top: 20px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
+
+    gap: 70px;
+}
+
+.about-statement {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 34px;
+
+    line-height: 1.25;
+}
+
+.about-statement span {
+
+    color: #a78bfa;
+}
+
+.about-text {
+
+    color:
+        rgba(255,255,255,0.6);
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+.about-text p {
+
+    margin-bottom: 20px;
+}
+
+.quote {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-left:
+        2px solid #8b5cf6;
+
+    background:
+        rgba(139,92,246,0.04);
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 15px;
+
+    margin-top: 60px;
+}
+
+.stat {
+
+    padding: 30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    transition: 0.35s;
+}
+
+.stat:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(139,92,246,0.4);
+}
+
+.stat h3 {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 38px;
+}
+
+.stat p {
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+}
+
+.skill {
+
+    position: relative;
+
+    padding: 30px;
+
+    min-height: 180px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.skill::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    top: -70px;
+    right: -70px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,0.3),
+            transparent 70%
+        );
+
+    transition: 0.4s;
+}
+
+.skill:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(139,92,246,0.45);
+}
+
+.skill:hover::before {
+
+    transform:
+        scale(2);
+}
+
+.skill-icon {
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+.skill h3 {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.skill p {
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(255,255,255,0.5);
+}
+
+.skill-level {
+
+    margin-top: 20px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color:
+        #a78bfa;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+
+    display: grid;
+
+    gap: 25px;
+}
+
+.project {
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
+
+    min-height: 300px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    transition: 0.45s;
+}
+
+.project:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(139,92,246,0.4);
+}
+
+.project-visual {
+
+    min-height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.ai-project {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(124,58,237,0.3),
+            transparent 60%
+        ),
+
+        #08080f;
+}
+
+.poster-project {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(236,72,153,0.25),
+            transparent 60%
+        ),
+
+        #08080f;
+}
+
+.startup-project {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(6,182,212,0.25),
+            transparent 60%
+        ),
+
+        #08080f;
+}
+
+
+/* AI VISUAL */
+
+.ai-orb {
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(167,139,250,0.8);
+
+    box-shadow:
+        0 0 40px
+        rgba(124,58,237,0.6),
+
+        inset 0 0 40px
+        rgba(6,182,212,0.3);
+
+    animation:
+        orbRotate 5s linear infinite;
+}
+
+@keyframes orbRotate {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* PROJECT CONTENT */
+
+.project-content {
+
+    padding: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.project-number {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color:
+        #a78bfa;
+
+    margin-bottom: 15px;
+}
+
+.project-content h3 {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.project-content p {
+
+    color:
+        rgba(255,255,255,0.55);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.tags {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.tag {
+
+    padding: 7px 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    border-radius: 50px;
+
+    font-size: 10px;
+
+    color:
+        rgba(255,255,255,0.6);
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.timeline {
+
+    position: relative;
+
+    border-left:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    padding-left: 35px;
+}
+
+.timeline-item {
+
+    position: relative;
+
+    margin-bottom: 50px;
+}
+
+.timeline-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -41px;
+
+    top: 5px;
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background:
+        #8b5cf6;
+
+    box-shadow:
+        0 0 20px
+        #8b5cf6;
+}
+
+.timeline-year {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color:
+        #a78bfa;
+
+    margin-bottom: 10px;
+}
+
+.timeline-item h3 {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 26px;
+
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+
+    color:
+        rgba(255,255,255,0.5);
+
+    line-height: 1.7;
+
+    max-width: 700px;
+}
+
+
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievement-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.achievement {
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.05),
+            rgba(255,255,255,0.015)
+        );
+}
+
+.achievement span {
+
+    font-size: 28px;
+}
+
+.achievement h3 {
+
+    margin:
+        20px 0 10px;
+
+    font-family:
+        "Space Grotesk";
+}
+
+.achievement p {
+
+    font-size: 13px;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   3D GAME
+========================================================= */
+
+.game-section {
+
+    position: relative;
+}
+
+.game-wrapper {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 0.35fr;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border-radius: 30px;
+}
+
+.game-screen {
+
+    position: relative;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #15152b,
+            #050509 70%
+        );
+
+    perspective: 800px;
+}
+
+
+/* 3D GRID */
+
+.game-grid {
+
+    position: absolute;
+
+    width: 150%;
+
+    height: 150%;
+
+    left: -25%;
+
+    top: 45%;
+
+    transform:
+        rotateX(65deg);
+
+    background-image:
+
+        linear-gradient(
+            rgba(139,92,246,0.25) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(139,92,246,0.25) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    animation:
+        gridMove 2s linear infinite;
+}
+
+@keyframes gridMove {
+
+    to {
+        background-position:
+            0 45px,
+            45px 0;
+    }
+}
+
+
+/* PLAYER */
+
+.player {
+
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    left: 50%;
+    bottom: 80px;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a78bfa,
+            #06b6d4
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(139,92,246,0.8);
+
+    border-radius: 8px;
+
+    transition:
+        left 0.15s ease,
+        bottom 0.15s ease;
+}
+
+.player::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.5);
+
+    border-radius: 3px;
+}
+
+
+/* GAME BALL */
+
+.game-ball {
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background:
+        #22d3ee;
+
+    box-shadow:
+        0 0 25px
+        #22d3ee;
+
+    display: none;
+}
+
+
+/* GAME SIDE */
+
+.game-info {
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.06);
+}
+
+.game-info h3 {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+.game-info p {
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    margin-bottom: 25px;
+}
+
+.score {
+
+    font-size: 45px;
+
+    font-family:
+        "Space Grotesk";
+
+    margin-bottom: 20px;
+}
+
+.game-button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #06b6d4
+        );
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+.controls {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    font-size: 11px;
+
+    color:
+        rgba(255,255,255,0.4);
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+}
+
+.social {
+
+    padding: 30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    transition: 0.35s;
+}
+
+.social:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(139,92,246,0.4);
+}
+
+.social-icon {
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.social h3 {
+
+    font-family:
+        "Space Grotesk";
+
+    margin-bottom: 8px;
+}
+
+.social p {
+
+    color:
+        rgba(255,255,255,0.45);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+
+    position: relative;
+
+    padding-bottom: 80px;
+}
+
+.contact-box {
+
+    position: relative;
+
+    padding: 70px 50px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    border-radius: 35px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(124,58,237,0.2),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(6,182,212,0.15),
+            transparent 30%
+        ),
+
+        rgba(255,255,255,0.025);
+}
+
+.contact-box h2 {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size:
+        clamp(45px,7vw,85px);
+
+    letter-spacing: -4px;
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+.contact-box h2 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #a78bfa,
+            #22d3ee,
+            #f472b6
+        );
+
+    -webkit-background-clip:
+        text;
+
+    color: transparent;
+}
+
+.contact-box p {
+
+    color:
+        rgba(255,255,255,0.55);
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* CONTACT CARDS */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 12px;
+
+    margin-top: 40px;
+}
+
+.contact-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    padding: 18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        rgba(0,0,0,0.2);
+
+    border-radius: 16px;
+
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(139,92,246,0.5);
+}
+
+.contact-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124,58,237,0.3),
+            rgba(6,182,212,0.2)
+        );
+}
+
+.contact-card small {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.4;
+
+    margin-bottom: 4px;
+}
+
+.contact-card strong {
+
+    font-size: 11px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        30px 7%;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color:
+        rgba(255,255,255,0.4);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 950px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-description {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+
+        justify-content: center;
+    }
+
+    .hero-visual {
+
+        margin-top: 30px;
+    }
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .achievement-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .project {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .game-wrapper {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .contact-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    section {
+
+        padding:
+            90px 5%;
+    }
+
+    .navbar {
+
+        top: 10px;
+
+        width: 94%;
+    }
+
+    .hero {
+
+        padding:
+            140px 5% 80px;
+    }
+
+    .hero h1 {
+
+        font-size: 55px;
+
+        letter-spacing: -3px;
+    }
+
+    .photo-card {
+
+        width: 300px;
+
+        height: 400px;
+    }
+
+    .float-one {
+
+        right: -5px;
+    }
+
+    .float-two {
+
+        left: -5px;
+    }
+
+    .stats {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .skills-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .project-content {
+
+        padding: 30px;
+    }
+
+    .game-screen {
+
+        height: 400px;
+    }
+
+    .contact-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .contact-box {
+
+        padding:
+            50px 20px;
+    }
+
+    .contact-box h2 {
+
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background"></div>
+
+<div class="particles" id="particles"></div>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+
+        <span class="logo-dot"></span>
+
+        GURVEER
+
+    </a>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#game">3D Game</a>
+        </li>
+
+    </ul>
+
+
+    <a href="#contact" class="nav-button">
+        Contact
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+
+        <div class="hero-content reveal">
+
+
+            <div class="hero-tag">
+
+                <span class="status-dot"></span>
+
+                AVAILABLE FOR PROJECTS
+
+            </div>
+
+
+            <h1>
+
+                Hi, I'm
+
+                <span class="gradient-text">
+                    Gurveer.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A student, creator and aspiring technology
+                entrepreneur exploring
+
+                <strong>
+                    AI, software development,
+                    design and entrepreneurship.
+                </strong>
+
+                I love turning ideas into real-world projects.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#projects"
+                    class="btn btn-primary"
+                >
+
+                    Explore My Work →
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn btn-secondary"
+                >
+
+                    Let's Connect
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-visual reveal">
+
+            <div class="photo-glow"></div>
+
+
+            <div
+                class="photo-card"
+                id="photoCard"
+            >
+
+                <div class="photo-card-inner">
+
+                    <!-- YOUR PHOTO -->
+
+                    <img
+                        src="profile.jpg"
+                        alt="Gurveer Singh"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card float-one">
+
+                ⚡ AI + Technology
+
+            </div>
+
+
+            <div class="floating-card float-two">
+
+                🚀 Building Ideas
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MARQUEE
+===================================================== -->
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        AI • PYTHON • WEB DEVELOPMENT •
+        COMPUTER VISION • DESIGN •
+        ENTREPRENEURSHIP • PROBLEM SOLVING •
+
+        AI • PYTHON • WEB DEVELOPMENT •
+        COMPUTER VISION • DESIGN •
+        ENTREPRENEURSHIP • PROBLEM SOLVING •
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="section-container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-number">
+                01 — ABOUT ME
+            </div>
+
+            <h2>
+                Curious mind.
+                <br>
+                Builder mindset.
+            </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-statement reveal">
+
+                I don't just want to
+
+                <span>
+                    learn technology.
+                </span>
+
+                I want to
+
+                <span>
+                    build with it.
+                </span>
+
+            </div>
+
+
+            <div class="about-text reveal">
+
+                <p>
+                    Hi, I'm <strong>Gurveer Singh</strong> —
+                    a student, creator, and aspiring technology
+                    entrepreneur passionate about turning ideas
+                    into real-world projects.
+                </p>
+
+                <p>
+                    I'm deeply interested in
+                    <strong>
+                        AI, technology, software development,
+                        design, and entrepreneurship.
+                    </strong>
+                    I enjoy exploring new technologies,
+                    building creative digital projects,
+                    and finding practical solutions to
+                    everyday problems.
+                </p>
+
+                <p>
+                    Alongside technology, I have experience
+                    working on creative and entrepreneurial
+                    projects, including digital design,
+                    poster branding, social media content,
+                    and small-business ideas.
+                </p>
+
+                <p>
+                    I'm currently focused on strengthening
+                    my skills in programming, AI, web
+                    development, and business while
+                    continuously learning and experimenting
+                    with new ideas.
+                </p>
+
+
+                <div class="quote">
+
+                    "Learn. Build. Experiment. Improve."
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stats">
+
+            <div class="stat reveal">
+
+                <h3>∞</h3>
+
+                <p>
+                    Ideas to Explore
+                </p>
+
+            </div>
+
+
+            <div class="stat reveal">
+
+                <h3>8+</h3>
+
+                <p>
+                    Core Skills
+                </p>
+
+            </div>
+
+
+            <div class="stat reveal">
+
+                <h3>3+</h3>
+
+                <p>
+                    Major Projects
+                </p>
+
+            </div>
+
+
+            <div class="stat reveal">
+
+                <h3>24/7</h3>
+
+                <p>
+                    Learning Mindset
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="section-container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-number">
+                02 — SKILLS
+            </div>
+
+            <h2>
+                What I work with.
+            </h2>
+
+            <p>
+                A growing toolkit built through
+                experimentation, personal projects,
+                business ideas and continuous learning.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Python Programming
+                </h3>
+
+                <p>
+                    Learning Python fundamentals and
+                    using it to experiment with
+                    automation and AI projects.
+                </p>
+
+                <div class="skill-level">
+                    BEGINNER
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    HTML, CSS and JavaScript for
+                    creating interactive websites
+                    and digital experiences.
+                </p>
+
+                <div class="skill-level">
+                    DEVELOPING
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI & Computer Vision
+                </h3>
+
+                <p>
+                    Experimenting with AI-based
+                    projects, webcam tracking and
+                    computer vision concepts.
+                </p>
+
+                <div class="skill-level">
+                    EXPLORING
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Graphic Design
+                </h3>
+
+                <p>
+                    Posters, social media creatives,
+                    branding and visual communication.
+                </p>
+
+                <div class="skill-level">
+                    CREATIVE
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Entrepreneurship
+                </h3>
+
+                <p>
+                    Developing business concepts,
+                    products, offers and practical
+                    business strategies.
+                </p>
+
+                <div class="skill-level">
+                    BUILDER
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Problem Solving
+                </h3>
+
+                <p>
+                    Turning problems into practical
+                    ideas and exploring technology-driven
+                    solutions.
+                </p>
+
+                <div class="skill-level">
+                    THINKER
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Digital Marketing
+                </h3>
+
+                <p>
+                    Instagram content, promotion,
+                    branding and social media
+                    communication.
+                </p>
+
+                <div class="skill-level">
+                    DEVELOPING
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Project Development
+                </h3>
+
+                <p>
+                    Building personal projects,
+                    prototypes and experimenting
+                    with new technologies.
+                </p>
+
+                <div class="skill-level">
+                    HANDS-ON
+                </div>
+
+            </div>
+
+
+            <div class="skill reveal">
+
+                <div class="skill-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Creative Thinking
+                </h3>
+
+                <p>
+                    Generating new concepts and
+                    developing ideas into practical
+                    projects.
+                </p>
+
+                <div class="skill-level">
+                    CREATIVE
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+    <div class="section-container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-number">
+                03 — PROJECTS
+            </div>
+
+            <h2>
+                Ideas → Projects.
+            </h2>
+
+            <p>
+                A selection of technology,
+                entrepreneurship and creative
+                projects I'm developing.
+            </p>
+
+        </div>
+
+
+
+        <div class="projects">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project reveal">
+
+                <div class="project-visual ai-project">
+
+                    <div class="ai-orb"></div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+                    <h3>
+                        AI Fitness Assistant
+                    </h3>
+
+                    <p>
+                        A Python and Computer Vision
+                        project concept designed to use
+                        a webcam for exercise repetition
+                        tracking and pose detection.
+
+                        Planned exercises include
+                        push-ups, squats, pull-ups,
+                        planks and bicep curls.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            Computer Vision
+                        </span>
+
+                        <span class="tag">
+                            AI
+                        </span>
+
+                        <span class="tag">
+                            Pose Detection
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project reveal">
+
+                <div class="project-visual poster-project">
+
+                    <div
+                        style="
+                        font-family:Space Grotesk;
+                        font-size:55px;
+                        font-weight:900;
+                        transform:rotate(-8deg);
+                        "
+                    >
+
+                        POSTERS
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+                    <h3>
+                        Posters Wallah
+                    </h3>
+
+                    <p>
+                        A poster-printing and wall décor
+                        brand developed around creative
+                        design, product presentation,
+                        pricing, promotional content
+                        and digital marketing.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Branding
+                        </span>
+
+                        <span class="tag">
+                            Graphic Design
+                        </span>
+
+                        <span class="tag">
+                            Marketing
+                        </span>
+
+                        <span class="tag">
+                            Entrepreneurship
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project reveal">
+
+                <div class="project-visual startup-project">
+
+                    <div
+                        style="
+                        font-size:90px;
+                        animation:floating 3s infinite;
+                        "
+                    >
+                        🚀
+                    </div>
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 03
+                    </div>
+
+                    <h3>
+                        AI Technology Startup Concept
+                    </h3>
+
+                    <p>
+                        A technology startup concept
+                        focused on identifying problems
+                        in small-town environments and
+                        developing practical AI and
+                        technology-driven solutions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            AI
+                        </span>
+
+                        <span class="tag">
+                            Innovation
+                        </span>
+
+                        <span class="tag">
+                            Startup
+                        </span>
+
+                        <span class="tag">
+                            Problem Solving
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+    <div class="section-container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-number">
+                04 — EDUCATION
+            </div>
+
+            <h2>
+                Learning never stops.
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-year">
+                    CURRENT
+                </div>
+
+                <h3>
+                    Class 12 — Science (PCM)
+                </h3>
+
+                <p>
+
+                    <strong>
+                        CBSE | Currently Pursuing
+                    </strong>
+
+                    <br><br>
+
+                    Physics • Chemistry • Mathematics
+                    • English • Informatics Practices
+
+                    <br><br>
+
+                    Currently focused on building a
+                    strong academic foundation while
+                    developing practical skills in
+                    technology, programming, AI and
+                    entrepreneurship.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-year">
+                    COMPLETED
+                </div>
+
+                <h3>
+                    Secondary Education
+                </h3>
+
+                <p>
+
+                    <strong>
+                        CBSE | Completed
+                    </strong>
+
+                    <br><br>
+
+                    Developed a foundation in
+                    mathematics, science, computer
+                    applications and problem-solving.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ACHIEVEMENTS
+===================================================== -->
+
+<section>
+
+    <div class="section-container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-number">
+                05 — ACHIEVEMENTS
+            </div>
+
+            <h2>
+                Building beyond the classroom.
+            </h2>
+
+        </div>
+
+
+        <div class="achievement-grid">
+
+
+            <div class="achievement reveal">
+
+                <span>🚀</span>
+
+                <h3>
+                    Posters Wallah
+                </h3>
+
+                <p>
+                    Founded and developed a
+                    poster-printing and wall décor
+                    brand.
+                </p>
+
+            </div>
+
+
+            <div class="achievement reveal">
+
+                <span>🤖</span>
+
+                <h3>
+                    Technical Projects
+                </h3>
+
+                <p>
+                    Developed concepts and prototypes
+                    involving Python, AI and
+                    computer vision.
+                </p>
+
+            </div>
+
+
+            <div class="achievement reveal">
+
+                <span>💡</span>
+
+                <h3>
+                    Startup Concepts
+                </h3>
+
+                <p>
+                    Developed entrepreneurial concepts
+                    focused on technology, AI and
+                    local opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     3D GAME
+===================================================== -->
+
+<section id="game" class="game-section">
+
+    <div class="section-container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-number">
+                06 — EXPERIMENT
+            </div>
+
+            <h2>
+                Play with my portfolio.
+            </h2>
+
+            <p>
+                A small interactive experiment built
+                directly into this portfolio.
+            </p>
+
+        </div>
+
+
+        <div class="game-wrapper reveal">
+
+
+            <div class="game-screen" id="gameScreen">
+
+                <div class="game-grid"></div>
+
+                <div
+                    class="player"
+                    id="player"
+                ></div>
+
+                <div
+                    class="game-ball"
+                    id="gameBall"
+                ></div>
+
+            </div>
+
+
+
+            <div class="game-info">
+
+                <h3>
+                    Neon Collector
+                </h3>
+
+                <p>
+                    Move the glowing cube and
+                    collect the energy orb.
+
+                    Try to beat your highest score.
+                </p>
+
+
+                <div class="score">
+
+                    <span id="score">
+                        0
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="game-button"
+                    id="startGame"
+                >
+
+                    START GAME
+
+                </button>
+
+
+                <div class="controls">
+
+                    DESKTOP
+
+                    <br>
+
+                    ← → or A / D
+
+                    <br><br>
+
+                    MOBILE
+
+                    <br>
+
+                    Tap the left/right side
+                    of the game screen.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GITHUB / SOCIAL
+===================================================== -->
+
+<section>
+
+    <div class="section-container">
+
+
+        <div class="section-heading reveal">
+
+            <div class="section-number">
+                07 — CONNECT
+            </div>
+
+            <h2>
+                Find me online.
+            </h2>
+
+            <p>
+                Follow my journey as I learn,
+                build and experiment with technology.
+            </p>
+
+        </div>
+
+
+        <div class="social-grid">
+
+
+            <a
+                class="social reveal"
+                href="https://github.com/yourusername"
+                target="_blank"
+            >
+
+                <div class="social-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <p>
+                    Programming journey,
+                    experiments and projects.
+                </p>
+
+            </a>
+
+
+
+            <a
+                class="social reveal"
+                href="https://www.instagram.com/gurveer_singh_sardari/"
+                target="_blank"
+            >
+
+                <div class="social-icon">
+                    ◎
+                </div>
+
+                <h3>
+                    Instagram
+                </h3>
+
+                <p>
+                    @gurveer_singh_sardari
+                </p>
+
+            </a>
+
+
+
+            <a
+                class="social reveal"
+                href="https://www.linkedin.com/"
+                target="_blank"
+            >
+
+                <div class="social-icon">
+                    in
+                </div>
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+                <p>
+                    Technology, AI and
+                    entrepreneurship journey.
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    id="contact"
+    class="contact-section"
+>
+
+    <div class="section-container">
+
+
+        <div class="contact-box reveal">
+
+
+            <div class="section-number">
+                08 — CONTACT
+            </div>
+
+
+            <h2>
+
+                Let's build
+
+                <span>
+                    something.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                Have a project idea,
+                collaboration opportunity,
+                or just want to connect?
+
+                I'm always open to discussing
+                technology, AI, design,
+                entrepreneurship and new ideas.
+
+            </p>
+
+
+            <a
+                href="mailto:gvs.bspr1111@gmail.com"
+                class="btn btn-primary"
+            >
+
+                Send Me an Email →
+
+            </a>
+
+
+
+            <div class="contact-grid">
+
+
+                <!-- EMAIL -->
+
+                <a
+                    href="mailto:gvs.bspr1111@gmail.com"
+                    class="contact-card"
+                >
+
+                    <div class="contact-icon">
+                        ✉
+                    </div>
+
+                    <div>
+
+                        <small>
+                            EMAIL
+                        </small>
+
+                        <strong>
+                            gvs.bspr1111@gmail.com
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- PHONE -->
+
+                <a
+                    href="tel:+919343604627"
+                    class="contact-card"
+                >
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <small>
+                            PHONE
+                        </small>
+
+                        <strong>
+                            +91 93436 04627
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="https://wa.me/919343604627"
+                    target="_blank"
+                    class="contact-card"
+                >
+
+                    <div class="contact-icon">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <small>
+                            WHATSAPP
+                        </small>
+
+                        <strong>
+                            Chat with me
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- INSTAGRAM -->
+
+                <a
+                    href="https://www.instagram.com/gurveer_singh_sardari/"
+                    target="_blank"
+                    class="contact-card"
+                >
+
+                    <div class="contact-icon">
+                        ◎
+                    </div>
+
+                    <div>
+
+                        <small>
+                            INSTAGRAM
+                        </small>
+
+                        <strong>
+                            @gurveer_singh_sardari
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <span>
+        © 2026 Gurveer Singh
+    </span>
+
+    <span>
+        Learn • Build • Experiment • Improve
+    </span>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+const particles =
+    document.getElementById("particles");
+
+
+for (let i = 0; i < 70; i++) {
+
+    const particle =
+        document.createElement("div");
+
+    particle.className =
+        "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        (8 + Math.random() * 15) + "s";
+
+    particle.style.animationDelay =
+        Math.random() * 10 + "s";
+
+    particle.style.opacity =
+        Math.random();
+
+    particles.appendChild(particle);
+}
+
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+const cursorGlow =
+    document.getElementById("cursorGlow");
+
+
+document.addEventListener(
+    "mousemove",
+    (event) => {
+
+        cursorGlow.style.left =
+            event.clientX + "px";
+
+        cursorGlow.style.top =
+            event.clientY + "px";
+
+    }
+);
+
+
+
+/* =========================================================
+   PHOTO 3D TILT
+========================================================= */
+
+const photoCard =
+    document.getElementById("photoCard");
+
+
+document.addEventListener(
+    "mousemove",
+    (event) => {
+
+        if (window.innerWidth < 900)
+            return;
+
+        const x =
+            (event.clientX /
+                window.innerWidth - 0.5) * 15;
+
+        const y =
+            (event.clientY /
+                window.innerHeight - 0.5) * -15;
+
+        photoCard.style.transform =
+            `rotateY(${x}deg)
+             rotateX(${y}deg)`;
+
+    }
+);
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(
+                (entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target
+                            .classList
+                            .add("active");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+revealElements.forEach(
+    element =>
+        revealObserver.observe(element)
+);
+
+
+
+/* =========================================================
+   3D MINI GAME
+========================================================= */
+
+const gameScreen =
+    document.getElementById("gameScreen");
+
+const player =
+    document.getElementById("player");
+
+const ball =
+    document.getElementById("gameBall");
+
+const scoreDisplay =
+    document.getElementById("score");
+
+const startButton =
+    document.getElementById("startGame");
+
+
+let playerX = 50;
+
+let score = 0;
+
+let gameRunning = false;
+
+let ballX = 50;
+
+let ballY = 0;
+
+let ballSpeed = 0.7;
+
+
+
+/* PLAYER MOVEMENT */
+
+function movePlayer(direction) {
+
+    if (!gameRunning)
+        return;
+
+    playerX += direction * 4;
+
+    if (playerX < 7)
+        playerX = 7;
+
+    if (playerX > 93)
+        playerX = 93;
+
+    player.style.left =
+        playerX + "%";
+}
+
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.key === "ArrowLeft" ||
+            event.key.toLowerCase() === "a"
+        ) {
+
+            movePlayer(-1);
+
+        }
+
+
+        if (
+            event.key === "ArrowRight" ||
+            event.key.toLowerCase() === "d"
+        ) {
+
+            movePlayer(1);
+
+        }
+
+    }
+);
+
+
+
+/* MOBILE TOUCH */
+
+gameScreen.addEventListener(
+    "touchstart",
+    (event) => {
+
+        if (!gameRunning)
+            return;
+
+        const touch =
+            event.touches[0];
+
+        const rect =
+            gameScreen.getBoundingClientRect();
+
+        const x =
+            touch.clientX -
+            rect.left;
+
+        if (
+            x <
+            rect.width / 2
+        ) {
+
+            movePlayer(-1);
+
+        } else {
+
+            movePlayer(1);
+
+        }
+
+    }
+);
+
+
+
+/* CREATE BALL */
+
+function createBall() {
+
+    ballX =
+        10 +
+        Math.random() * 80;
+
+    ballY = 0;
+
+    ball.style.left =
+        ballX + "%";
+
+    ball.style.top =
+        "20px";
+
+    ball.style.display =
+        "block";
+}
+
+
+
+/* GAME LOOP */
+
+function gameLoop() {
+
+    if (!gameRunning)
+        return;
+
+
+    ballY += ballSpeed;
+
+
+    ball.style.top =
+        ballY + "%";
+
+
+    const playerDistance =
+        Math.abs(ballX - playerX);
+
+
+    if (
+        ballY > 80 &&
+        playerDistance < 10
+    ) {
+
+        score++;
+
+        scoreDisplay.textContent =
+            score;
+
+        ballSpeed += 0.05;
+
+        createBall();
+
+    }
+
+
+    if (ballY > 100) {
+
+        gameRunning = false;
+
+        startButton.textContent =
+            "PLAY AGAIN";
+
+        ball.style.display =
+            "none";
+
+        return;
+
+    }
+
+
+    requestAnimationFrame(
+        gameLoop
+    );
+
+}
+
+
+
+/* START GAME */
+
+startButton.addEventListener(
+    "click",
+    () => {
+
+        score = 0;
+
+        ballSpeed = 0.7;
+
+        playerX = 50;
+
+        scoreDisplay.textContent =
+            "0";
+
+        player.style.left =
+            "50%";
+
+        gameRunning = true;
+
+        startButton.textContent =
+            "RESTART";
+
+        createBall();
+
+        requestAnimationFrame(
+            gameLoop
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   SMOOTH NAVIGATION
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(
+        anchor => {
+
+            anchor.addEventListener(
+                "click",
+                function(event) {
+
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
+
+                    if (!target)
+                        return;
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+            );
+
+        }
+);
+
+
+</script>
+
+</body>
+</html>
